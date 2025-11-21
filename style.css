@@ -1,4 +1,3 @@
-/* Reset dan Font */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +13,6 @@ body {
     flex-direction: column;
 }
 
-/* Header */
 header {
     background: linear-gradient(90deg, #fceabb 0%, #f8b500 100%);
     color: #2a2a2a;
@@ -27,7 +25,6 @@ header {
     font-family: 'Segoe UI Black', Tahoma, sans-serif;
 }
 
-/* Container */
 .container {
     max-width: 1100px;
     margin: 25px auto;
@@ -38,10 +35,8 @@ header {
     flex: 1;
 }
 
-/* --- REVISI BAGIAN LOGIN (Posisi di Tengah) --- */
 #login {
     text-align: center;
-    /* Tambahan Flexbox agar konten benar-benar di tengah */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,28 +71,23 @@ header {
     box-shadow: 0 12px 36px rgba(255, 223, 34, 0.8);
 }
 
-/* Content */
 #content h2, #content h3 {
     color: #253858;
     margin-bottom: 22px;
     font-weight: 700;
     text-shadow: 0 1px 3px #fff9c4;
-    /* Pastikan judul juga center jika diinginkan, atau hapus baris ini jika ingin rata kiri */
     text-align: center; 
 }
 
 form {
     margin-bottom: 35px;
-    /* Agar form container juga menyesuaikan posisi */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* --- REVISI INPUT & BUTTON (Agar tidak menempel kiri) --- */
 input, select, textarea, button {
     display: block;
-    /* UBAH DARI '14px 0' MENJADI '14px auto' */
     margin: 14px auto; 
     padding: 14px;
     width: 100%;
@@ -118,7 +108,6 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 8px 2px #fceabbcc;
 }
 
-/* Tombol utama */
 button {
     background: linear-gradient(90deg, #fceabb, #f8b500);
     color: #253858;
@@ -140,7 +129,6 @@ button:hover {
     box-shadow: 0 12px 36px rgba(252, 219, 135, 0.9);
 }
 
-/* Opsi quiz tanpa radio button, klik blok langsung */
 .options {
     margin-top: 10px;
 }
@@ -162,7 +150,6 @@ button:hover {
     color: #222;
 }
 
-/* Soal quiz */
 .question {
     background: #fff9cd;
     padding: 22px;
@@ -172,12 +159,10 @@ button:hover {
     box-shadow: 0 3px 14px rgba(255, 235, 59, 0.4);
 }
 
-/* List buku / item */
 ul {
     list-style: none;
     padding: 0;
     max-width: 700px;
-    /* Center list juga agar rapi */
     margin: 10px auto; 
 }
 
@@ -201,7 +186,6 @@ li small {
     margin-top: 4px;
 }
 
-/* Hasil nilai quiz */
 .quiz-result {
     font-weight: 700;
     color: #f8b500;
@@ -211,7 +195,6 @@ li small {
     text-align: center;
 }
 
-/* Tombol Keluar */
 .logout-btn {
     background-color: #ffb800;
     color: #253858;
@@ -219,13 +202,13 @@ li small {
     padding: 12px 24px;
     border-radius: 14px;
     cursor: pointer;
-    margin: 0 auto 22px auto; /* Center tombol logout */
+    margin: 0 auto 22px auto;
     font-weight: 700;
     font-size: 1.1em;
     box-shadow: 0 5px 18px rgba(255, 184, 0, 0.65);
     transition: background-color 0.3s ease, transform 0.2s ease;
     max-width: 180px;
-    display: block; /* Pastikan block agar margin auto bekerja */
+    display: block;
 }
 
 .logout-btn:hover {
@@ -234,7 +217,6 @@ li small {
     box-shadow: 0 9px 36px rgba(255, 184, 0, 0.85);
 }
 
-/* Responsif */
 @media (max-width: 768px) {
     .role-buttons {
         flex-direction: column;
