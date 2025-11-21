@@ -28,23 +28,23 @@ function login(event) {
         currentRole = 'siswa';
         document.getElementById('login').style.display = 'none';
         document.getElementById('content').style.display = 'block';
-        loadContent();
+        loadContent(); // Langsung muat dashboard siswa
     } else if (username === 'guru' && password === 'abcefd') {
         currentRole = 'guru';
         document.getElementById('login').style.display = 'none';
         document.getElementById('content').style.display = 'block';
-        loadContent();
+        loadContent(); // Langsung muat dashboard guru
     } else if (username === 'penjaga perpus' && password === 'abc321') {
         currentRole = 'penjaga';
         document.getElementById('login').style.display = 'none';
         document.getElementById('content').style.display = 'block';
-        loadContent();
+        loadContent(); // Langsung muat dashboard penjaga
     } else {
         alert('Username atau password salah! Coba lagi.');
     }
 }
 
-// Kembali ke halaman login
+// Kembali ke halaman login (logout)
 function goHome() {
     currentRole = '';
     document.getElementById('content').style.display = 'none';
@@ -56,7 +56,7 @@ function goHome() {
 // Event listener untuk form login
 document.getElementById('loginForm').addEventListener('submit', login);
 
-// Render konten setiap role
+// Render konten setiap role (dashboard langsung muncul setelah login)
 function loadContent() {
     const content = document.getElementById('content');
     content.innerHTML = '';
@@ -341,24 +341,4 @@ function pinjamBuku(index){
     buku.absenPeminjam = absen;
     buku.kelasPeminjam = kelas;
     localStorage.setItem('books', JSON.stringify(books));
-    alert(`Buku "${buku.title}" berhasil dipinjam.\nNomor Resi: ${buku.resi}\nTanggal Pengembalian: ${buku.tanggalPengembalian}\nPeminjam: ${buku.namaPeminjam} (Absen: ${buku.absenPeminjam}, Kelas: ${buku.kelasPeminjam})`);
-    displayBooks();
-}
-
-// Fungsi kembalikan buku
-function kembalikanBuku(index){
-    if(!confirm('Apakah buku sudah dikembalikan?')) return;
-    const buku = books[index];
-    buku.available = true;
-    buku.tanggalPengembalian = null;
-    buku.namaPeminjam = null;
-    buku.absenPeminjam = null;
-    buku.kelasPeminjam = null;
-    localStorage.setItem('books', JSON.stringify(books));
-    alert(`Buku "${buku.title}" sudah dikembalikan dan tersedia.`);
-    displayBooks();
-}
-
-// Fungsi hapus buku
-function deleteBook(index){
-    if(!confirm('Yakin ingin menghapus buku ini?'))
+    alert(`Buku "${buku.title}" berhasil dipinjam.\nNomor Resi: ${buku.resi}\nTang
