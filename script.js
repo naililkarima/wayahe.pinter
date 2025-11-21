@@ -24,7 +24,7 @@ function login(event) {
     const password = document.getElementById('password').value.trim();
 
     // Algoritma login
-    if (username === 'siswa' && password === '123654') {
+    if (username == 'siswa' && password == '123654') {
         currentRole = 'siswa';
         document.getElementById('login').style.display = 'none';
         document.getElementById('content').style.display = 'block';
