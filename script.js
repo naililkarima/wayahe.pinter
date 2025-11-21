@@ -1,4 +1,3 @@
-// Data global dengan properti kategori, resi, tanggal pengembalian, dan info peminjam
 let currentRole = '';
 let books = JSON.parse(localStorage.getItem('books')) || [
     { title: 'Novel: Harry Potter', available: true, resi: null, tanggalPengembalian: null, kategori: 'Novel', namaPeminjam: null, absenPeminjam: null, kelasPeminjam: null },
@@ -17,7 +16,6 @@ let quizzes = JSON.parse(localStorage.getItem('quizzes')) || [
     }
 ];
 
-// Fungsi login dengan validasi
 function login(event) {
     event.preventDefault();
     const username = document.getElementById('username').value.trim();
@@ -43,7 +41,6 @@ function login(event) {
     }
 }
 
-// Logout ke halaman login
 function goHome() {
     currentRole = '';
     document.getElementById('content').style.display = 'none';
@@ -52,7 +49,6 @@ function goHome() {
     document.getElementById('loginForm').reset();
 }
 
-// Pasang event listener login form
 document.getElementById('loginForm').addEventListener('submit', login);
 
 function loadContent() {
